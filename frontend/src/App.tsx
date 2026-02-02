@@ -13,7 +13,7 @@ const translations = {
     heroTitle: "WARNA PROFILE S.R.L.",
     heroSubtitle: "Specialisti in Profili PVC Decco e Ferramenta GU",
     heroDescription: "Fornitura di profili in PVC Decco e servizi di ferramenta GU di alta qualità. Sedi operative in Toscana e Campania.",
-    heroButton: "Richiedi Preventivo",
+    heroButton: "contattaci",
     aboutTitle: "Chi Siamo",
     aboutSubtitle: "Esperti nel settore dei profili PVC e ferramenta",
     aboutText: "Warna Profile S.r.l. è un'azienda dinamica specializzata nella vendita di profili in PVC Decco e servizi di ferramenta GU. Con sede legale a Sansepolcro (AR) e sedi operative in Campania, offriamo prodotti di alta qualità per l'edilizia e l'industria.",
