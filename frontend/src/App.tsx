@@ -50,7 +50,7 @@ const translations = {
     locationRegion: "Toscana, Italia",
     locationOperational: "Sedi Operative",
     locationOp1: "Villa Literno (CE)",
-    locationOp2: "Mondragone (CE)",
+    locationOp2: "Mondragone (CE) - Via Consortile Savone 1",
     locationDescription: "Garantiamo una copertura nazionale efficiente per la fornitura di profili PVC Decco e servizi di ferramenta GU.",
     contactTitle: "Contattaci",
     contactSubtitle: "Siamo a tua disposizione per qualsiasi richiesta",
@@ -112,7 +112,7 @@ const translations = {
     locationRegion: "Tuscany, Italy",
     locationOperational: "Operational Offices",
     locationOp1: "Villa Literno (CE)",
-    locationOp2: "Mondragone (CE)",
+    locationOp2: "Mondragone (CE) - Via Consortile Savone 1",
     locationDescription: "Efficient national coverage for PVC Decco profiles and GU ferramenta.",
     contactTitle: "Contact Us",
     contactSubtitle: "We are at your disposal",
@@ -640,6 +640,32 @@ export default function App() {
                        </span>
                      </div>
                    </div>
+                   <div className="flex items-center space-x-4">
+                     <div className="bg-blue-800 p-3 rounded-lg">
+                       <Phone size={20} />
+                     </div>
+                     <div>
+                       <a href="tel:+393938799433" className="text-blue-100 hover:text-white transition-colors block">
+                         +39 393 8799433
+                       </a>
+                       <span className="text-sm text-blue-300">
+                         Antonio Diomaiuto
+                       </span>
+                     </div>
+                   </div>
+                   <div className="flex items-center space-x-4">
+                     <div className="bg-blue-800 p-3 rounded-lg">
+                       <Phone size={20} />
+                     </div>
+                     <div>
+                       <a href="tel:+39335269718" className="text-blue-100 hover:text-white transition-colors block">
+                         +39 335 269718
+                       </a>
+                       <span className="text-sm text-blue-300">
+                         Vincenzo Bocchino
+                       </span>
+                     </div>
+                   </div>
                    <div className="flex items-start space-x-4">
                      <div className="bg-blue-800 p-3 rounded-lg">
                        <MapPin size={20} />
@@ -698,6 +724,28 @@ export default function App() {
               <p>{t('footerCopyright')}</p>
               <p className="text-slate-500">{t('footerVat')}</p>
               <p className="text-slate-500 text-[11px] max-w-xs">{t('footerAddress')}</p>
+              
+              {/* Contatti */}
+              <div className="mt-4 pt-4 border-t border-slate-800 flex flex-col gap-1.5">
+                <p className="text-slate-400 text-xs font-semibold mb-1">
+                  {language === 'it' ? 'Contatti' : 'Contacts'}
+                </p>
+                <p className="text-slate-500 text-xs">
+                  Antonio Diomaiuto: <a href="tel:+393938799433" className="text-blue-400 hover:text-blue-300">+39 393 8799433</a>
+                </p>
+                <p className="text-slate-500 text-xs">
+                  Vincenzo Bocchino: <a href="tel:+39335269718" className="text-blue-400 hover:text-blue-300">+39 335 269718</a>
+                </p>
+              </div>
+
+              {/* Sedi Operative */}
+              <div className="mt-3 flex flex-col gap-1">
+                <p className="text-slate-400 text-xs font-semibold mb-1">
+                  {language === 'it' ? 'Sedi Operative' : 'Operational Offices'}
+                </p>
+                <p className="text-slate-500 text-[11px]">Mondragone (CE) - Via Consortile Savone 1</p>
+                <p className="text-slate-500 text-[11px]">Villa Literno (CE)</p>
+              </div>
             </div>
           </div>
           
