@@ -228,11 +228,20 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
-            {/* Logo con fallback se non esiste */}
+            {/* Logo */}
             <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
               <div className="h-10 md:h-12 w-auto flex items-center">
-                {/* Logo placeholder se il file non esiste */}
-                <div className="bg-blue-600 text-white px-3 py-2 rounded-lg font-bold text-sm md:text-base">
+                <img 
+                  src="/logo.png" 
+                  alt="Warna Profile Logo" 
+                  className="h-10 md:h-12 w-auto object-contain"
+                  onError={(e) => {
+                    // Fallback se l'immagine non si carica
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <div className="bg-blue-600 text-white px-3 py-2 rounded-lg font-bold text-sm md:text-base hidden">
                   WARNA PROFILE
                 </div>
               </div>
@@ -377,8 +386,19 @@ export default function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Card 1 con immagine Decco 83 */}
             <Card className="p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-full h-48 mb-6 overflow-hidden bg-white rounded-lg flex items-center justify-center p-4">
-                <div className="text-center">
+              <div className="w-full h-48 mb-6 overflow-hidden bg-slate-50 rounded-lg flex items-center justify-center">
+                <img 
+                  src="/decco83.webp" 
+                  alt="Profilo PVC Decco 83" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Fallback se l'immagine non si carica
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.nextElementSibling;
+                    if (fallback) fallback.classList.remove('hidden');
+                  }}
+                />
+                <div className="text-center hidden">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-xl flex items-center justify-center mb-4 mx-auto shadow-md">
                     <Package size={28} />
                   </div>
@@ -712,7 +732,17 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
             <div>
-              <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-lg mb-4 inline-block">
+              <img 
+                src="/logo.png" 
+                alt="Warna Profile Logo" 
+                className="h-12 w-auto object-contain mb-4 mx-auto md:mx-0"
+                onError={(e) => {
+                  // Fallback se l'immagine non si carica
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold text-lg mb-4 inline-block hidden">
                 WARNA PROFILE
               </div>
               <p className="text-slate-500 text-sm max-w-md">
