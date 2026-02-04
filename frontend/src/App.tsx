@@ -19,15 +19,23 @@ const translations = {
     aboutText: "Warna Profile S.r.l. è un'azienda dinamica specializzata nella vendita di profili in PVC Decco e servizi di ferramenta GU. Con sede legale a Sansepolcro (AR) e sedi operative in Campania, offriamo prodotti di alta qualità per l'edilizia e l'industria.",
     aboutMission: "La nostra missione è fornire soluzioni personalizzate in PVC e servizi di ferramenta di precisione, garantendo qualità, affidabilità e supporto tecnico specializzato.",
     productsTitle: "I Nostri Prodotti",
-    productsSubtitle: "Profili PVC Decco e materiali di alta qualità",
-    product1Title: "Profili PVC Decco",
-    product1Desc: "Gamma Decco 83: profili ad alte prestazioni termiche per serramenti moderni e divisori industriali.",
-    product2Title: "Accessori PVC",
-    product2Desc: "Componenti complementari per l'installazione: guarnizioni, raccordi e sistemi di fissaggio.",
-    product3Title: "Materiali Speciali",
-    product3Desc: "Soluzioni su misura per progetti complessi e applicazioni industriali specifiche.",
-    product4Title: "Forniture Industriali",
-    product4Desc: "Materiali certificati per l'industria con gestione logistica dedicata.",
+    productsSubtitle: "Una vetrina delle nostre soluzioni per serramenti",
+    
+    // Nuove traduzioni per la vetrina prodotti
+    productDecco83Title: "Profili PVC Decco 83",
+    productDecco83Desc: "La serie Decco 83 rappresenta il top di gamma per l'isolamento termico e acustico. Con un design moderno e una struttura a 7 camere, è la scelta ideale per serramenti ad alte prestazioni, garantendo efficienza energetica e comfort abitativo.",
+    productDecco82Title: "Profili PVC Decco 82",
+    productDecco82Desc: "La serie Decco 82 offre un eccellente equilibrio tra prestazioni e versatilità. Con un sistema a 6 camere, questi profili sono robusti e affidabili, adatti sia per nuove costruzioni che per ristrutturazioni, assicurando un ottimo isolamento.",
+    galleryTitle: "Galleria Immagini",
+    decco83_alt1: "Dettaglio del profilo Decco 83",
+    decco83_alt2: "Finestra realizzata con Decco 83",
+    decco83_alt3: "Sezione del profilo Decco 83",
+    decco83_alt4: "Esempio di installazione Decco 83",
+    decco82_alt1: "Angolo di un serramento Decco 82",
+    decco82_alt2: "Profilo Decco 82 in esposizione",
+    decco82_alt3: "Porta finestra con profili Decco 82",
+    decco82_alt4: "Dettaglio guarnizioni Decco 82",
+
     servicesTitle: "I Nostri Servizi",
     servicesSubtitle: "Servizi professionali per l'industria",
     service1Title: "Ferramenta GU",
@@ -81,15 +89,23 @@ const translations = {
     aboutText: "Warna Profile S.r.l. specializes in PVC Decco profiles and GU ferramenta services with offices in Tuscany and Campania.",
     aboutMission: "To provide customized PVC solutions ensuring quality and specialized support.",
     productsTitle: "Our Products",
-    productsSubtitle: "PVC Decco profiles and high-quality materials",
-    product1Title: "PVC Decco Profiles",
-    product1Desc: "Decco 83 range: high thermal performance profiles for modern windows.",
-    product2Title: "PVC Accessories",
-    product2Desc: "Gaskets, fittings and fastening systems for profile installation.",
-    product3Title: "Special Materials",
-    product3Desc: "Custom solutions for complex projects and industrial needs.",
-    product4Title: "Industrial Supplies",
-    product4Desc: "Certified materials with dedicated logistics management.",
+    productsSubtitle: "A showcase of our solutions for windows and doors",
+    
+    // New translations for the product showcase
+    productDecco83Title: "Decco 83 PVC Profiles",
+    productDecco83Desc: "The Decco 83 series is the top of the range for thermal and acoustic insulation. With a modern design and a 7-chamber structure, it is the ideal choice for high-performance windows, ensuring energy efficiency and living comfort.",
+    productDecco82Title: "Decco 82 PVC Profiles",
+    productDecco82Desc: "The Decco 82 series offers an excellent balance between performance and versatility. With a 6-chamber system, these profiles are robust and reliable, suitable for both new constructions and renovations, ensuring excellent insulation.",
+    galleryTitle: "Image Gallery",
+    decco83_alt1: "Detail of the Decco 83 profile",
+    decco83_alt2: "Window made with Decco 83",
+    decco83_alt3: "Section of the Decco 83 profile",
+    decco83_alt4: "Example of Decco 83 installation",
+    decco82_alt1: "Corner of a Decco 82 window frame",
+    decco82_alt2: "Decco 82 profile on display",
+    decco82_alt3: "French door with Decco 82 profiles",
+    decco82_alt4: "Detail of Decco 82 gaskets",
+
     servicesTitle: "Our Services",
     servicesSubtitle: "Professional services for industry",
     service1Title: "GU Ferramenta",
@@ -128,6 +144,32 @@ const translations = {
     footerAddress: "Registered Office: VIA DEI LORENA 25, 52037 SANSEPOLCRO (AR)",
   }
 };
+
+// --- DATI PRODOTTI ---
+const productsData = [
+  {
+    id: 'decco83',
+    titleKey: 'productDecco83Title',
+    descriptionKey: 'productDecco83Desc',
+    images: [
+      { src: '/products/decco83-1.webp', altKey: 'decco83_alt1' },
+      { src: '/products/decco83-2.webp', altKey: 'decco83_alt2' },
+      { src: '/products/decco83-3.webp', altKey: 'decco83_alt3' },
+      { src: '/products/decco83-4.webp', altKey: 'decco83_alt4' },
+    ]
+  },
+  {
+    id: 'decco82',
+    titleKey: 'productDecco82Title',
+    descriptionKey: 'productDecco82Desc',
+    images: [
+      { src: '/products/decco82-1.webp', altKey: 'decco82_alt1' },
+      { src: '/products/decco82-2.webp', altKey: 'decco82_alt2' },
+      { src: '/products/decco82-3.webp', altKey: 'decco82_alt3' },
+      { src: '/products/decco82-4.webp', altKey: 'decco82_alt4' },
+    ]
+  },
+];
 
 // --- COMPONENTI UI ---
 
@@ -371,53 +413,38 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- PRODUCTS SECTION --- */}
+      {/* --- PRODUCTS SECTION (NUOVA VETRINA) --- */}
       <section id="products" className="py-20 md:py-32 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title={t('productsTitle')} subtitle={t('productsSubtitle')} />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <Card className="p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
-              <div className="w-full h-48 mb-6 overflow-hidden bg-slate-50 rounded-lg flex items-center justify-center">
-                <img 
-                  src="/decco83.webp" 
-                  alt="Profilo PVC Decco 83" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.nextElementSibling;
-                    if (fallback) fallback.classList.remove('hidden');
-                  }}
-                />
-                <div className="text-center hidden">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-xl flex items-center justify-center mb-4 mx-auto shadow-md">
-                    <Package size={28} />
+          <div className="space-y-16">
+            {productsData.map((product) => (
+              <Card key={product.id} className="p-6 md:p-8 lg:p-10 !shadow-lg">
+                <div className="grid lg:grid-cols-5 gap-8 items-center">
+                  {/* Contenuto Testuale */}
+                  <div className="lg:col-span-2">
+                    <h3 className="text-3xl font-bold text-blue-900 mb-4">{t(product.titleKey)}</h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      {t(product.descriptionKey)}
+                    </p>
                   </div>
-                  <div className="text-blue-900 font-bold text-lg mb-2">DECCO 83</div>
-                  <div className="text-xs text-slate-500">Profilo ad alte prestazioni</div>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-blue-900 mb-3">{t('product1Title')}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm flex-grow">
-                {t('product1Desc')}
-              </p>
-            </Card>
 
-            {[
-              { icon: Factory, titleKey: 'product2Title', descKey: 'product2Desc' },
-              { icon: ShieldCheck, titleKey: 'product3Title', descKey: 'product3Desc' },
-              { icon: Truck, titleKey: 'product4Title', descKey: 'product4Desc' }
-            ].map((product, idx) => (
-              <Card key={idx} className="p-8 h-full flex flex-col hover:-translate-y-2 transition-transform duration-300">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-xl flex items-center justify-center mb-6 shadow-md">
-                  <product.icon size={28} />
-                </div>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">{t(product.titleKey)}</h3>
-                <p className="text-slate-600 leading-relaxed text-sm flex-grow">
-                  {t(product.descKey)}
-                </p>
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-blue-600 font-semibold text-sm cursor-pointer hover:underline">
-                  Dettagli <ChevronRight size={16} />
+                  {/* Galleria Immagini */}
+                  <div className="lg:col-span-3">
+                    <h4 className="text-xl font-semibold text-slate-800 mb-4 border-b pb-2">{t('galleryTitle')}</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {product.images.map((image, index) => (
+                        <div key={index} className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+                          <img
+                            src={image.src}
+                            alt={t(image.altKey)}
+                            className="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -460,6 +487,7 @@ export default function App() {
           <SectionHeader title={t('locationTitle')} subtitle={t('locationSubtitle')} />
           
           <div className="grid lg:grid-cols-2 gap-12">
+            {/* Info Column */}
             <div className="space-y-8">
               <Card className="p-8">
                 <div className="flex items-start space-x-4 mb-6">
@@ -495,6 +523,7 @@ export default function App() {
                 </div>
               </Card>
 
+              {/* Quick checks */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                  {[
                    language === 'it' ? 'Consegne Nazionali' : 'National Deliveries',
@@ -510,6 +539,7 @@ export default function App() {
               </div>
             </div>
 
+            {/* Mappa OpenStreetMap */}
             <div className="h-[400px] lg:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=12.1400%2C43.5700%2C12.1500%2C43.5800&layer=mapnik&marker=43.575%2C12.145"
@@ -543,6 +573,7 @@ export default function App() {
           
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             
+            {/* Contact Form con Formspree */}
             <div className="lg:col-span-2">
               <Card className="p-8 md:p-10">
                 <form 
@@ -615,6 +646,7 @@ export default function App() {
               </Card>
             </div>
 
+            {/* Contact Info Sidebar */}
             <div className="lg:col-span-1 space-y-6">
                <div className="bg-blue-900 text-white p-8 rounded-xl shadow-xl">
                  <h3 className="text-2xl font-bold mb-8 border-b border-blue-700 pb-4">{t('contactInfo')}</h3>
@@ -684,6 +716,7 @@ export default function App() {
                    </div>
                  </div>
 
+                 {/* Orari */}
                  <div className="mt-12">
                    <h4 className="font-bold text-lg mb-4 text-blue-200">
                      {language === 'it' ? 'Orari di Apertura' : 'Opening Hours'}
@@ -700,6 +733,7 @@ export default function App() {
                    </div>
                  </div>
 
+                 {/* Partita IVA */}
                  <div className="mt-8 pt-6 border-t border-blue-800 text-sm text-blue-300">
                    <p>P.IVA / VAT: 02517830515</p>
                    <p>C.F. / Tax Code: 02517830515</p>
