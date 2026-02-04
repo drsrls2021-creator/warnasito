@@ -1,7 +1,7 @@
 // src/ProductsPage.tsx
-import React, { useState, useEffect } from 'react'; // Aggiunto useState
+import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import { X } from 'lucide-react'; // Importa l'icona per chiudere il lightbox
+import { X } from 'lucide-react';
 
 // Importa i dati e i componenti comuni da App.tsx
 import { translations, productsData, SectionHeader, Card } from './App';
@@ -74,7 +74,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ language }) => {
                         <div 
                           key={index} 
                           className="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group cursor-pointer aspect-square"
-                          onClick={() => openLightbox(image.src, t(image.altKey))} // AGGIUNTO onClick
+                          onClick={() => openLightbox(image.src, t(image.altKey))}
                         >
                           <img
                             src={image.src}
@@ -96,9 +96,9 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ language }) => {
       {lightboxOpen && currentImage && (
         <div 
           className="fixed inset-0 z-[100] bg-black bg-opacity-80 flex items-center justify-center p-4"
-          onClick={closeLightbox} // Chiudi cliccando fuori dall'immagine
+          onClick={closeLightbox}
         >
-          <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}> {/* Impedisce la chiusura cliccando sull'immagine */}
+          <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={closeLightbox} 
               className="absolute top-4 right-4 text-white hover:text-blue-300 transition-colors z-10 p-2 rounded-full bg-black/50"

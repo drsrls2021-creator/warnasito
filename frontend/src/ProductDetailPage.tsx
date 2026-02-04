@@ -40,8 +40,14 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ language }) => {
   if (!product) {
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pt-20 flex flex-col items-center justify-center">
-        <h2 className="text-3xl font-bold text-red-600 mb-4">Prodotto non trovato</h2>
-        <p className="text-lg text-slate-700 mb-8">Siamo spiacenti, il prodotto che cerchi non esiste.</p>
+        <h2 className="text-3xl font-bold text-red-600 mb-4">
+          {language === 'it' ? 'Prodotto non trovato' : 'Product not found'}
+        </h2>
+        <p className="text-lg text-slate-700 mb-8">
+          {language === 'it' 
+            ? 'Siamo spiacenti, il prodotto che cerchi non esiste.' 
+            : 'We are sorry, the product you are looking for does not exist.'}
+        </p>
         <button 
           onClick={() => navigate('/products')} 
           className="flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors"
@@ -68,7 +74,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ language }) => {
           <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div className="w-full h-96 flex items-center justify-center bg-slate-100 rounded-lg overflow-hidden shadow-md">
               <img 
-                src={product.mainImage || product.previewImage}
+                src={product.previewImage}
                 alt={t(product.titleKey)} 
                 className="max-w-full max-h-full object-contain"
               />
@@ -120,12 +126,17 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ language }) => {
         )}
         
         <div className="text-center mt-12">
-          <p className="text-lg text-slate-600 mb-6">Hai bisogno di maggiori informazioni o un preventivo personalizzato?</p>
+          <p className="text-lg text-slate-600 mb-6">
+            {language === 'it' 
+              ? 'Hai bisogno di maggiori informazioni o un preventivo personalizzato?' 
+              : 'Need more information or a personalized quote?'}
+          </p>
           <button 
             onClick={() => navigate('/#contact')}
             className="group bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto"
           >
-            Contattaci subito <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            {language === 'it' ? 'Contattaci subito' : 'Contact us now'} 
+            <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
