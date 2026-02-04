@@ -159,9 +159,8 @@ export default function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       
-      // Logica migliorata per activeSection
       const sections = ['home', 'about', 'products', 'services', 'location', 'contact'];
-      const scrollPosition = window.scrollY + 100; // Offset per navbar
+      const scrollPosition = window.scrollY + 100;
       
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -190,7 +189,6 @@ export default function App() {
     }
   };
 
-  // Gestione semplice del form di contatto (usa mailto: come fallback)
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -202,7 +200,6 @@ export default function App() {
     const phone = formData.get('phone') as string;
     const message = formData.get('message') as string;
     
-    // Fallback a mailto: se Formspree non è configurato
     const formspreeAction = form.getAttribute('action');
     if (!formspreeAction || formspreeAction.includes('TUO_ID_QUI')) {
       const subject = language === 'it' ? 'Richiesta Preventivo da Sito Web' : 'Quote Request from Website';
@@ -210,10 +207,8 @@ export default function App() {
       
       window.location.href = `mailto:warnaprofile@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
-      // Reset form dopo invio
       form.reset();
     } else {
-      // Se Formspree è configurato, invia normalmente
       form.submit();
     }
     
@@ -226,17 +221,16 @@ export default function App() {
       {/* --- NAVBAR --- */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-md py-4 shadow-sm'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => scrollToSection('home')}>
-              <div className="h-10 md:h-12 w-auto flex items-center">
+              <div className="h-12 md:h-16 w-auto flex items-center">
                 <img 
                   src="/logo.png" 
                   alt="Warna Profile Logo" 
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className="h-12 md:h-16 w-auto object-contain"
                   onError={(e) => {
-                    // Fallback se l'immagine non si carica
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.nextElementSibling?.classList.remove('hidden');
                   }}
@@ -317,7 +311,6 @@ export default function App() {
 
       {/* --- HERO SECTION --- */}
       <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
@@ -384,7 +377,6 @@ export default function App() {
           <SectionHeader title={t('productsTitle')} subtitle={t('productsSubtitle')} />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {/* Card 1 con immagine Decco 83 */}
             <Card className="p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
               <div className="w-full h-48 mb-6 overflow-hidden bg-slate-50 rounded-lg flex items-center justify-center">
                 <img 
@@ -392,7 +384,6 @@ export default function App() {
                   alt="Profilo PVC Decco 83" 
                   className="w-full h-full object-contain"
                   onError={(e) => {
-                    // Fallback se l'immagine non si carica
                     e.currentTarget.style.display = 'none';
                     const fallback = e.currentTarget.nextElementSibling;
                     if (fallback) fallback.classList.remove('hidden');
@@ -412,7 +403,6 @@ export default function App() {
               </p>
             </Card>
 
-            {/* Altre card prodotti */}
             {[
               { icon: Factory, titleKey: 'product2Title', descKey: 'product2Desc' },
               { icon: ShieldCheck, titleKey: 'product3Title', descKey: 'product3Desc' },
@@ -470,7 +460,6 @@ export default function App() {
           <SectionHeader title={t('locationTitle')} subtitle={t('locationSubtitle')} />
           
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Info Column */}
             <div className="space-y-8">
               <Card className="p-8">
                 <div className="flex items-start space-x-4 mb-6">
@@ -506,7 +495,6 @@ export default function App() {
                 </div>
               </Card>
 
-              {/* Quick checks */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                  {[
                    language === 'it' ? 'Consegne Nazionali' : 'National Deliveries',
@@ -522,7 +510,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Mappa OpenStreetMap */}
             <div className="h-[400px] lg:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=12.1400%2C43.5700%2C12.1500%2C43.5800&layer=mapnik&marker=43.575%2C12.145"
@@ -556,7 +543,6 @@ export default function App() {
           
           <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             
-            {/* Contact Form con Formspree */}
             <div className="lg:col-span-2">
               <Card className="p-8 md:p-10">
                 <form 
@@ -629,7 +615,6 @@ export default function App() {
               </Card>
             </div>
 
-            {/* Contact Info Sidebar */}
             <div className="lg:col-span-1 space-y-6">
                <div className="bg-blue-900 text-white p-8 rounded-xl shadow-xl">
                  <h3 className="text-2xl font-bold mb-8 border-b border-blue-700 pb-4">{t('contactInfo')}</h3>
@@ -699,7 +684,6 @@ export default function App() {
                    </div>
                  </div>
 
-                 {/* Orari */}
                  <div className="mt-12">
                    <h4 className="font-bold text-lg mb-4 text-blue-200">
                      {language === 'it' ? 'Orari di Apertura' : 'Opening Hours'}
@@ -716,7 +700,6 @@ export default function App() {
                    </div>
                  </div>
 
-                 {/* Partita IVA */}
                  <div className="mt-8 pt-6 border-t border-blue-800 text-sm text-blue-300">
                    <p>P.IVA / VAT: 02517830515</p>
                    <p>C.F. / Tax Code: 02517830515</p>
@@ -735,9 +718,8 @@ export default function App() {
               <img 
                 src="/logo.png" 
                 alt="Warna Profile Logo" 
-                className="h-12 w-auto object-contain mb-4 mx-auto md:mx-0"
+                className="h-14 w-auto object-contain mb-4 mx-auto md:mx-0"
                 onError={(e) => {
-                  // Fallback se l'immagine non si carica
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.nextElementSibling?.classList.remove('hidden');
                 }}
@@ -755,7 +737,6 @@ export default function App() {
               <p className="text-slate-500">{t('footerVat')}</p>
               <p className="text-slate-500 text-[11px] max-w-xs">{t('footerAddress')}</p>
               
-              {/* Contatti */}
               <div className="mt-4 pt-4 border-t border-slate-800 flex flex-col gap-1.5">
                 <p className="text-slate-400 text-xs font-semibold mb-1">
                   {language === 'it' ? 'Contatti' : 'Contacts'}
@@ -768,7 +749,6 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Sedi Operative */}
               <div className="mt-3 flex flex-col gap-1">
                 <p className="text-slate-400 text-xs font-semibold mb-1">
                   {language === 'it' ? 'Sedi Operative' : 'Operational Offices'}
